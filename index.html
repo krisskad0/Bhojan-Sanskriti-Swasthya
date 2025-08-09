@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutrient Showdown: Non-Veg vs Veg (Indian Context)</title>
+  <meta name="description" content="A clean, responsive landing page comparing nutrition of common non-veg foods vs Indian vegetarian alternatives using IFCT 2017 and verified sources." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1320; --muted:#9aa5b1; --accent:#7dd3fc; --glass: rgba(255,255,255,0.04);
+      --chip:#1f2937; --success:#10b981;
+      --max-width:1200px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071028 0%, #06121a 100%);color:#e6f0f6;min-height:100vh;line-height:1.4}
+    .container{max-width:var(--max-width);margin:36px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#042; font-weight:700}
+    h1{font-size:clamp(20px,3vw,32px);margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+
+    /* Main card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .card h2{margin:0 0 12px}
+    .tables{display:grid;gap:16px}
+    table{width:100%;border-collapse:collapse;background:transparent}
+    thead th{ text-align:left;padding:10px 12px;background:rgba(255,255,255,0.02); font-size:13px;color:var(--accent);border-bottom:1px solid rgba(255,255,255,0.03)}
+    tbody td{padding:10px 12px;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:14px;color:#d7e9f5}
+    tbody tr:last-child td{border-bottom:0}
+    .fact{margin:10px 0;padding:10px;border-radius:10px;background:var(--chip);color:var(--accent);font-weight:600}
+
+    /* Sidebar */
+    .sidebar .stat{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:10px;background:var(--glass);margin-bottom:12px}
+    .muted{color:var(--muted);font-size:13px}
+    .cta{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042;border:0;font-weight:700}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .sidebar{order:2}
+    }
+
+    /* small helper */
+    .kicker{display:inline-block;background:rgba(125,211,252,0.08);color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px;margin-bottom:8px}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* badges for highlights */
+    .highlight{color:#042;background:var(--accent);padding:4px 8px;border-radius:999px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">NS</div>
+      <div>
+        <h1>Nutrient Showdown: Non‑Veg vs Veg — Indian Context</h1>
+        <p class="lead">Side‑by‑side comparison (per 100g) using IFCT 2017 and verified sources. Quick facts and clear tables to help diet planning and research — vegetarian alternatives can match or exceed animal sources for many nutrients.</p>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <section class="card" aria-labelledby="main-title">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+          <div>
+            <div class="kicker">Nutrition comparison — 100g servings</div>
+            <h2 id="main-title">Highlights</h2>
+          </div>
+          <div style="text-align:right">
+            <div class="muted">Data sources:</div>
+            <div class="muted">IFCT 2017 · Indian Food Composition · Peer‑reviewed</div>
+          </div>
+        </div>
+
+        <div class="tables">
+          <!-- Protein Power -->
+          <div class="card" style="padding:12px">
+            <h3>1. Protein Power</h3>
+            <table aria-describedby="protein-fact">
+              <thead>
+                <tr><th>Non‑Veg (100g)</th><th>Protein (g)</th><th>Veg Alternative (100g)</th><th>Protein (g)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Chicken breast</td><td>31</td><td><strong>Soy chunks</strong></td><td><strong>52</strong></td></tr>
+                <tr><td>Chicken thighs</td><td>24</td><td>Seitan (wheat gluten)</td><td>25</td></tr>
+                <tr><td>Eggs (whole)</td><td>13</td><td>Moong dal (dry)</td><td><strong>24</strong></td></tr>
+                <tr><td>Salmon</td><td>20</td><td>Masoor dal (dry)</td><td><strong>24</strong></td></tr>
+                <tr><td>Prawns</td><td>20</td><td>Rajma (dry)</td><td><strong>24</strong></td></tr>
+              </tbody>
+            </table>
+            <div id="protein-fact" class="fact">Fact: <span class="highlight">Soy chunks have 68% more protein than chicken breast</span> — per 100g.</div>
+          </div>
+
+          <!-- Omega-3 -->
+          <div class="card" style="padding:12px">
+            <h3>2. Omega‑3 Fatty Acids</h3>
+            <table aria-describedby="omega-fact">
+              <thead>
+                <tr><th>Non‑Veg</th><th>Omega‑3 (mg)</th><th>Veg Alternative</th><th>Omega‑3 (mg)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Salmon</td><td>2500</td><td>Flaxseeds</td><td><strong>22813</strong></td></tr>
+                <tr><td>Tuna</td><td>1500</td><td>Chia seeds</td><td><strong>17800</strong></td></tr>
+                <tr><td>Sardines</td><td>1800</td><td>Walnuts</td><td><strong>9079</strong></td></tr>
+                <tr><td>Trout</td><td>1200</td><td>Hemp seeds</td><td><strong>21000</strong></td></tr>
+              </tbody>
+            </table>
+            <div id="omega-fact" class="fact">Fact: <span class="highlight">Flaxseeds have ~9× more omega‑3 than salmon</span> (ALA form).</div>
+            <div class="muted" style="margin-top:8px">Note: plant omega‑3s are mainly ALA; conversion to EPA/DHA is limited — consider algal DHA/EPA or fortified foods if direct EPA/DHA is required.</div>
+          </div>
+
+          <!-- Iron & B-Vitamins -->
+          <div class="card" style="padding:12px">
+            <h3>3. Iron & B‑Vitamins</h3>
+            <table aria-describedby="iron-fact">
+              <thead>
+                <tr><th>Non‑Veg</th><th>Iron (mg)</th><th>Veg Alternative</th><th>Iron (mg)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Beef</td><td>3.0</td><td>Black sesame seeds</td><td><strong>14.6</strong></td></tr>
+                <tr><td>Liver</td><td>6.2</td><td>Amaranth leaves</td><td><strong>7.6</strong></td></tr>
+                <tr><td>Clams</td><td>12.0</td><td>Moringa leaves</td><td><strong>7.0</strong></td></tr>
+                <tr><td>Sardines</td><td>2.9</td><td>Bajra (pearl millet)</td><td><strong>8.0</strong></td></tr>
+              </tbody>
+            </table>
+            <div id="iron-fact" class="fact">Fact: <span class="highlight">Black sesame seeds have almost 5× more iron than beef</span>.</div>
+            <div class="muted" style="margin-top:8px">Note: plant iron is non‑heme and less bioavailable; combine with vitamin C (citrus, amla, tomato) to improve absorption.</div>
+          </div>
+
+          <!-- Calcium & Vitamin D -->
+          <div class="card" style="padding:12px">
+            <h3>4. Calcium & Vitamin D</h3>
+            <table aria-describedby="calcium-fact">
+              <thead>
+                <tr><th>Non‑Veg (100g)</th><th>Calcium (mg)</th><th>Veg Alternative</th><th>Calcium (mg)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Sardines (with bones)</td><td>382</td><td>Ragi (finger millet)</td><td>344</td></tr>
+                <tr><td>Salmon</td><td>12</td><td>Sesame seeds</td><td><strong>975</strong></td></tr>
+                <tr><td>Shrimp</td><td>70</td><td>Almonds</td><td>264</td></tr>
+                <tr><td>Eggs</td><td>50</td><td>Cowpea leaves</td><td>328</td></tr>
+              </tbody>
+            </table>
+            <div id="calcium-fact" class="fact">Fact: <span class="highlight">Sesame seeds have ~19× more calcium than salmon</span>.</div>
+            <div class="muted" style="margin-top:8px">Note: Vitamin D is limited in many plant foods — sunlight exposure or fortified foods/supplements may be required; dairy also provides bioavailable calcium for those who consume it.</div>
+          </div>
+        </div>
+
+        <footer>
+          <div>Want this data as CSV or printable PDF? Use the buttons on the right.</div>
+        </footer>
+      </section>
+
+      <aside class="sidebar" style="width:100%">
+        <div class="card" style="padding:16px">
+          <h3>Quick Reference</h3>
+          <div class="stat"><div class="muted">Top protein winner</div><div><strong>Soy chunks</strong></div></div>
+          <div class="stat"><div class="muted">Highest plant omega‑3</div><div><strong>Flax / Hemp</strong></div></div>
+          <div class="stat"><div class="muted">Highest plant calcium</div><div><strong>Sesame seeds</strong></div></div>
+          <div class="muted" style="font-size:13px;margin-top:8px">Important: numbers shown are per 100g raw/edible where appropriate and are approximations from IFCT 2017 and reference databases.</div>
+
+          <div class="cta">
+            <button class="btn primary" id="downloadCSV">Download CSV</button>
+            <button class="btn" id="print">Print / PDF</button>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+          <div style="font-size:13px;color:var(--muted)">Citation tips</div>
+          <ul style="color:var(--muted);padding-left:18px;margin:6px 0">
+            <li>IFCT 2017 for Indian values</li>
+            <li>Peer‑reviewed nutrient databases for seeds & legumes</li>
+            <li>Note: omega‑3 plant values are ALA — conversion discussed above</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // CSV export helper
+    const data = [
+      ["Category","Non‑Veg (100g)","Protein/Omega/Calcium/Iron (value)","Veg Alternative (100g)","Value"],
+      ["Protein","Chicken breast","31","Soy chunks","52"],
+      ["Protein","Chicken thighs","24","Seitan","25"],
+      ["Protein","Eggs (whole)","13","Moong dal (dry)","24"],
+      ["Protein","Salmon","20","Masoor dal (dry)","24"],
+      ["Protein","Prawns","20","Rajma (dry)","24"],
+      ["Omega‑3","Salmon","2500","Flaxseeds","22813"],
+      ["Omega‑3","Tuna","1500","Chia seeds","17800"],
+      ["Omega‑3","Sardines","1800","Walnuts","9079"],
+      ["Omega‑3","Trout","1200","Hemp seeds","21000"],
+      ["Iron","Beef","3.0","Black sesame seeds","14.6"],
+      ["Iron","Liver","6.2","Amaranth leaves","7.6"],
+      ["Iron","Clams","12.0","Moringa leaves","7.0"],
+      ["Calcium","Sardines (with bones)","382","Ragi","344"],
+      ["Calcium","Salmon","12","Sesame seeds","975"],
+      ["Calcium","Shrimp","70","Almonds","264"],
+      ["Calcium","Eggs","50","Cowpea leaves","328"]
+    ];
+
+    function toCSV(rows){
+      return rows.map(r => r.map(c => '"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+    }
+
+    document.getElementById('downloadCSV').addEventListener('click', ()=>{
+      const csv = toCSV(data);
+      const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'nutrient-showdown.csv'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('print').addEventListener('click', ()=>{
+      window.print();
+    });
+  </script>
+</body>
+</html>
